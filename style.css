@@ -1,0 +1,121 @@
+/*  text k Center korar jonno */
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/*  main button k design  */
+
+.button {
+    padding: 13px 58px;
+    cursor: pointer;
+    background: #158f86;
+    position: relative;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+/* button a click korle css ar poriborton */
+.button:active{
+    background-color: #0e2baa;
+}
+
+button:focus {
+ outline: none !important;
+}
+
+/* button er majhe j span tag nichi tar design ba button er majhe j text ache tar design */
+.button__text {
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+}
+
+
+/* Buttom a click kore new loading vallue add kora  */
+
+.button--loading{
+    position: relative;
+    /* position relwtive na dileo hoy karon amra agei button design ar somoy possition nreletive dichi mane sob content button ar majhe thakbe */
+}
+
+/* loading annimation ara css design */
+
+.button--loading::after {
+    content: "";
+    height: 37px;
+    width: 37px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: white;
+    border-right-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    animation: button-loading-spinner 1s ease infinite;
+    transition: all .2s;
+}
+
+/* loading animation  */
+  
+  @keyframes button-loading-spinner {
+    from {
+      transform: rotate(0turn);
+    }
+  
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+
+/* button a click korle ager vallue jate na dekhay  */
+
+  .button--loading .button__text{
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+/* click korar por 2 secent por jokhon loading sesh hbe tokhon ja show korabo  */
+
+
+  .button--done{
+    position: relative;
+    /* position relwtive na dileo hoy karon amra agei button design ar somoy possition nreletive dichi mane sob content button ar majhe thakbe */
+
+  }
+
+
+  .button--done::before {
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    top: trans;
+    transform: translate(-43px, -5px);
+    font-size: 28px;
+    color: white;
+}
+
+
+.button--done .button__text {
+    visibility: hidden;
+    opacity: 0;
+}
+
+/*  amora 2 second por akta succesh massege dekhabo ta design */
+#textxaa {
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    text-transform: capitalize;
+    position: absolute;
+    left: 62px;
+    top: 13px;
+}
